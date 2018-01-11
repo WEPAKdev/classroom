@@ -1,0 +1,10 @@
+Acceuil Classroom
+1) pouvoir choisir une classe parmis une liste ou selectionner une classe existante
+Classe
+1) Afficher les eleves de la classe et les info les concernant
+2) pouvoir creer/delete/modifier un eleve
+3) pouvoir generer aleatoirement des eleves
+4) creer un devoir avec un sujet
+5) creer des groupes d'eleves aleatoire et homogènes en compétences et les associer au devoir
+
+

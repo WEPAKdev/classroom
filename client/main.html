@@ -1,0 +1,33 @@
+<head>
+  <title>classroom</title>
+</head>
+
+<body>
+  {{> classrooms}}
+</body>
+
+<template name="classrooms">
+    <div class="row collection">
+        <ul class="collection with-header">
+            <li class="collection-header"><h4>Classrooms</h4></li>
+            {{#each Classes}}
+                <li class="collection-item">{{ name }}<i class="material-icons delete">delete</i></li>
+            {{else}}
+                {{> no_class}}
+            {{/each}}
+            <li class="collection-item">
+                <div class="input-field col s6">
+                    <input value="" id="first_name2" type="text" class="validate">
+                    <label class="active" for="first_name2">Classroom name</label>
+                </div>
+                <a class="waves-effect waves-light btn-large" action="addClassroom">Create classroom</a>
+            </li>
+        </ul>
+    </div>
+</template>
+
+<template name="no_class">
+    <li class="collection-header">Create classroom below</li>
+</template>
+
+
