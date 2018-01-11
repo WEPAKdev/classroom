@@ -3,6 +3,7 @@ body{
     padding:5% 15%;
     background-color:#ecf0f1
 }
-.collection > ul{
+.collection{
+    padding:15px;
     background-color:white;
 }
