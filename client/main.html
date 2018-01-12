@@ -4,18 +4,29 @@
 </head>
 
 <body>
-    <div class="page" id="screen_acc">
-        <h3>Classrooms</h3>
-        {{> classrooms}}
-    </div>
-    <div class="page" id="screen_class">
-        
-    </div>
-    
+    {{>index}}
 </body>
 
+<template name='index'>
+    <div class="wrap">
+        <div class="main">
+            <div class="page" id="page1">
+                {{#if accView }}
+                    {{> classrooms}}
+                {{/if}}
+            </div>
+            <div class="page" id="page2">
+                {{#if classroomView }}
+                    {{> classroom}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</template>
+
 <template name="classrooms">
-    <div class='classroom-container'>
+    <h3>Classrooms</h3>
+    <div class='classrooms-container'>
         <ul class="collection">
             {{#each classrooms}}
                 <li class="collection-item" action="selectClassroom">
@@ -42,6 +53,10 @@
             </div>
         </ul>
     </div>
+</template>
+
+<template name="classroom">
+    <p>{{ getClassroomId }}</p>
 </template>
 
 

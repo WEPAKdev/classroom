@@ -1,21 +1,46 @@
 /* CSS declarations go here */
 body{
-    padding:5% 15%;
     background-color:#ecf0f1
+}
+body .wrap{
+    overflow:hidden;
+    width:100%;
+    height:100%;
+    position:absolute;
+}
+body .wrap .main{
+    width:200%;
+    height:100%;
+}
+body .wrap .main .page{
+    position:relative;
+    padding: 5% 5%;
+    width:50%;
+    height:100%;
+    float:left;
+    transition: all 0.3s ease-out;
+}
+.page.nextpage{
+    margin-left:-50%;
+    z-index:999;
+}
+.page.hidepage{
+    transform:scale(0.5);
+    opacity:0;
 }
 .collection{
     padding:15px;
     background-color:white;
 }
-.classroom-container .collection .collection-item{
+.classrooms-container .collection .collection-item{
     margin-bottom: 3px;
     position:relative;
 } 
-.classroom-container .collection .collection-item:hover{
+.classrooms-container .collection .collection-item:hover{
     cursor:pointer;
     background-color: #f2f2f2;
 }
-.classroom-container .collection .collection-item .input-field{
+.classrooms-container .collection .collection-item .input-field{
     width: 60%;
     margin: 0;
     position: absolute;
@@ -23,28 +48,28 @@ body{
     left: 20px;
     z-index:-1;
     opacity:0;
-    tranbsition: all .3 ease-out;
+    transition: all 0.3s ease-out;
 }
-.classroom-container .collection .collection-item .input-field.activate{
+.classrooms-container .collection .collection-item .input-field.activate{
     z-index:2;
     opacity:1
 }
-.classroom-container .collection .collection-item .input-field button{
+.classrooms-container .collection .collection-item .input-field button{
     float:left;
     margin-top:6px;
 }
-.classroom-container .collection .collection-item a.btn{
+.classrooms-container .collection .collection-item a.btn{
     opacity:0;
 }
-.classroom-container .collection .collection-item:hover a.btn{
+.classrooms-container .collection .collection-item:hover a.btn{
     opacity:1;
 }
-.classroom-container .btn{
+.classrooms-container .btn{
     float:right;
     margin-top:-7px;
     margin-right:15px;
 }
-.classroom-container input[name="editClassname"]{
+.classrooms-container input[name="editClassname"]{
     float:left;
     background-color:white;
     margin-bottom:0;
