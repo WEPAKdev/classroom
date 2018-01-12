@@ -1,22 +1,42 @@
 <head>
-  <title>classroom</title>
+    <title>classroom</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-    <h3>Classrooms</h3>
-  {{> classrooms}}
+    <div class="page" id="screen_acc">
+        <h3>Classrooms</h3>
+        {{> classrooms}}
+    </div>
+    <div class="page" id="screen_class">
+        
+    </div>
+    
 </body>
 
 <template name="classrooms">
     <div class='classroom-container'>
         <ul class="collection">
             {{#each classrooms}}
-                <li class="collection-item">{{ name }}<i class="material-icons delete">delete</i></li>
+                <li class="collection-item" action="selectClassroom">
+                    {{ name }}
+                    <div class="input-field">
+                        <input class="validate" type="text" name="editClassname"/>
+                        <button class="btn waves-effect waves-light" type="submit" action="validEditClassname">Submit
+                          <i class="material-icons right">send</i>
+                        </button>
+                        <button class="btn waves-effect waves-light" type="submit" action="cancelEditClassname">Cancel
+                          <i class="material-icons right">cancel</i>
+                        </button>
+                    </div>
+                    <a class="waves-effect waves-light btn" action="editClass"><i class="material-icons right">edit</i>Edit</a>
+                    <a class="waves-effect waves-light btn" action="deleteClass"><i class="material-icons right">delete</i>Delete</a>
+                </li>
             {{/each}}
             <div class="addClassForm">
                 <div class="input-field">
-                    <input value="" id="first_name2" name="name" type="text" class="validate">
-                    <label class="active" for="first_name2">Classroom name</label>
+                    <input value="" id="newClassname" name="name" type="text" class="validate">
+                    <label class="active" for="newClassname">Classroom name</label>
                 </div>
                 <a class="waves-effect waves-light btn-large" action="addClassroom">Create classroom</a>
             </div>
